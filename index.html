@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abdu Rahman Zaheem K.P. — Cloud Engineer & MCA Scholar specializing in Microsoft Azure, AWS, Cloud Architecture, Virtualization, and Network Security.">
+  <meta name="author" content="Abdu Rahman Zaheem K.P.">
+  <meta name="keywords" content="Cloud Engineer, Azure, AWS, Networking, Virtualization, MCA, Portfolio, Architecture Simulator">
+  
+  <title>Abdu Rahman Zaheem K.P. | Cloud Solutions Architect & MCA Project</title>
+
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body data-theme="cyan">
+
+  <!-- BACKGROUND CANVAS & AMBIENT SCI-FI GLOW -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="cyber-grid-overlay" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+
+  <!-- TOP TELEMETRY HUD BAR -->
+  <aside class="telemetry-hud" aria-label="System Telemetry">
+    <div class="hud-left">
+      <div class="hud-badge">
+        <span class="hud-dot"></span>
+        <span>CLUSTER: SRM-IST-AP-SOUTH</span>
+      </div>
+      <div class="hud-badge">
+        <span>STATUS: <strong style="color: var(--status-success);">SYSTEM OPTIMAL</strong></span>
+      </div>
+      <div class="hud-badge" id="hud-latency">
+        <span>RTT: 14ms</span>
+      </div>
+    </div>
+    
+    <div class="hud-right">
+      <button class="hud-btn" id="audio-toggle-btn" title="Toggle Futuristic Audio FX (Synthesized via Web Audio API)">
+        <span id="audio-icon">🔇</span>
+        <span id="audio-status-text">AUDIO: OFF</span>
+      </button>
+
+      <button class="hud-btn" id="theme-cycle-btn" title="Cycle Futuristic Theme">
+        <span>🎨</span>
+        <span id="theme-label">CYBER CYAN</span>
+      </button>
+
+      <button class="hud-btn cmd-btn-header" id="quick-cmd-trigger" title="Quick Command Palette (Ctrl+K)">
+        <span>⌘K</span>
+        <span>PALETTE</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="navbar" id="navbar">
+    <div class="logo-wrapper">
+      <a href="#home" class="logo-icon" aria-label="Go to Home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+        </svg>
+      </a>
+      <a href="#home" class="logo-text">
+        Zaheem<span>.cloud</span>
+      </a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+      ☰
+    </button>
+
+    <ul class="nav-center" id="navLinks">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#simulator" class="nav-link">Cloud Simulator</a></li>
+      <li><a href="#estimator" class="nav-link">Cost Estimator</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#terminal-section" class="nav-link">Cloud Shell</a></li>
+      <li><a href="#academics" class="nav-link">Academics</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-cta-group">
+      <a href="./Zaheem-CV.pdf.pdf" download="Abdu-Rahman-Zaheem-CV.pdf" class="btn btn-outline-cyan btn-sm">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Download CV
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         HERO SECTION
+         ==================================================================== -->
+    <section class="section hero-section" id="home">
+      <div class="hero-content">
+        <div class="hero-status-pill">
+          <span class="hud-dot"></span>
+          <span>SRM IST CHENNAI · MCA SCHOLAR · CLOUD ENTHUSIAST</span>
+        </div>
+
+        <h1 class="hero-name">
+          Abdu Rahman<br>
+          <span class="accent">Zaheem K.P</span>
+        </h1>
+
+        <div class="hero-typewriter-wrapper">
+          <span>&gt; </span>
+          <span class="hero-typewriter" id="typewriter">Cloud Engineer</span>
+        </div>
+
+        <p class="hero-bio">
+          Aspiring Cloud Systems Engineer &amp; MCA Candidate specializing in 
+          <strong>Microsoft Azure</strong> and <strong>Amazon Web Services (AWS)</strong>. 
+          Architecting resilient, highly-available cloud infrastructures, automated Infrastructure as Code (IaC), 
+          virtual networks, and hybrid cloud security architectures.
+        </p>
+
+        <div class="hero-chips-grid">
+          <div class="hero-chip">
+            <svg class="hero-chip-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+            </svg>
+            <span>Microsoft Azure</span>
+          </div>
+          <div class="hero-chip">
+            <svg class="hero-chip-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+            <span>AWS Cloud HA</span>
+          </div>
+          <div class="hero-chip">
+            <svg class="hero-chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+              <line x1="6" y1="6" x2="6.01" y2="6"/>
+              <line x1="6" y1="18" x2="6.01" y2="18"/>
+            </svg>
+            <span>Virtualization &amp; VMware</span>
+          </div>
+          <div class="hero-chip">
+            <svg class="hero-chip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <span>Network Security &amp; NSG</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#simulator" class="btn btn-primary">
+            <span>Launch Cloud Simulator</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+          </a>
+          <a href="#projects" class="btn btn-secondary">
+            <span>Explore Projects</span>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="7" y1="17" x2="17" y2="7"/>
+              <polyline points="7 7 17 7 17 17"/>
+            </svg>
+          </a>
+          <a href="#terminal-section" class="btn btn-secondary">
+            <span>Open Shell (&gt;_)</span>
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/Zaheem-GIT" target="_blank" rel="noopener noreferrer" class="hero-social-link">
+            <span>GitHub</span> ↗
+          </a>
+          <span>/</span>
+          <a href="https://www.linkedin.com/in/zaheemkp/" target="_blank" rel="noopener noreferrer" class="hero-social-link">
+            <span>LinkedIn</span> ↗
+          </a>
+          <span>/</span>
+          <span>SRM Institute of Science &amp; Technology</span>
+        </div>
+      </div>
+
+      <!-- 3D HOLOGRAPHIC CLOUD SERVER NODE CARD -->
+      <div class="hero-hologram-stage" aria-label="Interactive 3D Server Telemetry Node">
+        <div class="floating-badge badge-azure">☁ Azure Virtual Network</div>
+        <div class="floating-badge badge-aws">⚡ AWS Multi-AZ Cluster</div>
+
+        <div class="hologram-card sci-bracket" id="hero-tilt-card">
+          <div class="hologram-header">
+            <div class="traffic-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="hologram-status">HYPERVISOR ACTIVE</div>
+          </div>
+
+          <div class="server-cluster-visual">
+            <div class="cluster-node active" id="node-fe">
+              <span class="node-icon">🌐</span>
+              <div class="node-name">App Gateway</div>
+              <div class="node-metric">99.99% Up</div>
+            </div>
+            <div class="cluster-node active" id="node-vm">
+              <span class="node-icon">💻</span>
+              <div class="node-name">VM Scale Set</div>
+              <div class="node-metric">3 Instances</div>
+            </div>
+            <div class="cluster-node active" id="node-db">
+              <span class="node-icon">🗄️</span>
+              <div class="node-name">Secure DB</div>
+              <div class="node-metric">Sync Multi-AZ</div>
+            </div>
+          </div>
+
+          <div class="telemetry-bars">
+            <div class="gauge-row">
+              <div class="gauge-label">
+                <span>VNET TRAFFIC THROUGHPUT</span>
+                <span id="metric-throughput">1.24 Gbps</span>
+              </div>
+              <div class="gauge-track">
+                <div class="gauge-fill cyan" style="width: 78%;"></div>
+              </div>
+            </div>
+
+            <div class="gauge-row">
+              <div class="gauge-label">
+                <span>CPU UTILIZATION (AVG)</span>
+                <span id="metric-cpu">34.8%</span>
+              </div>
+              <div class="gauge-track">
+                <div class="gauge-fill purple" style="width: 35%;"></div>
+              </div>
+            </div>
+
+            <div class="gauge-row">
+              <div class="gauge-label">
+                <span>BASTION ZERO-TRUST SHIELD</span>
+                <span style="color: var(--status-success);">ENCRYPTED</span>
+              </div>
+              <div class="gauge-track">
+                <div class="gauge-fill emerald" style="width: 100%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hologram-footer">
+            <span>IP: 10.0.1.4/24 (Private)</span>
+            <span>REGION: ap-south-1</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         MCA SHOWCASE 1: INTERACTIVE CLOUD ARCHITECTURE SIMULATOR & TOPOLOGY
+         ==================================================================== -->
+    <section class="section" id="simulator">
+      <div class="section-header">
+        <span class="eyebrow-tag">01 — MCA TECHNICAL SHOWCASE</span>
+        <h2 class="section-title">
+          Cloud Architecture <span class="text-gradient">Topology Simulator</span>
+        </h2>
+        <p class="section-subtitle">
+          An interactive laboratory built to simulate live packet flows, load balancing, health checks, 
+          and automated zone failovers in modern Azure &amp; AWS cloud environments.
+        </p>
+      </div>
+
+      <div class="simulator-box">
+        <div class="simulator-controls">
+          <div class="sim-tabs" role="tablist">
+            <button class="sim-tab-btn active" id="tab-azure" role="tab" aria-selected="true">
+              ☁ Azure 3-Tier Enterprise
+            </button>
+            <button class="sim-tab-btn" id="tab-aws" role="tab" aria-selected="false">
+              ⚡ AWS High-Availability VPC
+            </button>
+          </div>
+
+          <div class="sim-actions">
+            <button class="btn btn-primary btn-sm" id="btn-sim-traffic">
+              <span>⚡ Fire Traffic Burst</span>
+            </button>
+            <button class="btn btn-secondary btn-sm" id="btn-sim-failover">
+              <span>💥 Simulate Zone Chaos / Failover</span>
+            </button>
+            <button class="btn btn-secondary btn-sm" id="btn-sim-reset">
+              <span>↺ Reset Topology</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive Topology Stage -->
+        <div class="topology-stage" id="topo-stage">
+          <!-- Animated SVG Connection lines -->
+          <svg class="topology-svg-lines" id="topo-svg-lines">
+            <path id="line-1" class="cable-line" d="M 120 180 L 260 180" />
+            <path id="line-2a" class="cable-line" d="M 380 180 C 440 180, 440 90, 520 90" />
+            <path id="line-2b" class="cable-line" d="M 380 180 C 440 180, 440 270, 520 270" />
+            <path id="line-3a" class="cable-line" d="M 640 90 C 700 90, 700 180, 780 180" />
+            <path id="line-3b" class="cable-line" d="M 640 270 C 700 270, 700 180, 780 180" />
+          </svg>
+
+          <!-- Column 1: Client Edge -->
+          <div class="topology-column">
+            <div class="topo-node" id="topo-client" title="Click to inspect Client Edge">
+              <span class="topo-node-badge">EDGE</span>
+              <span class="topo-node-icon">🌍</span>
+              <div class="topo-node-title">Public Clients</div>
+              <div class="topo-node-sub">HTTPS / DNS</div>
+            </div>
+          </div>
+
+          <!-- Column 2: Ingress / Load Balancer -->
+          <div class="topology-column">
+            <div class="topo-node" id="topo-lb" title="Click to inspect Load Balancer rules">
+              <span class="topo-node-badge">WAF</span>
+              <span class="topo-node-icon">⚖️</span>
+              <div class="topo-node-title" id="topo-lb-title">App Gateway</div>
+              <div class="topo-node-sub" id="topo-lb-sub">SSL Offload · Port 443</div>
+            </div>
+          </div>
+
+          <!-- Column 3: Compute Scale Set / AZs -->
+          <div class="topology-column">
+            <div class="topo-node" id="topo-vm-1" title="Click to test outage on Instance 1">
+              <span class="topo-node-badge">AZ-1</span>
+              <span class="topo-node-icon">🖥️</span>
+              <div class="topo-node-title" id="topo-vm1-title">Azure VM Tier 1</div>
+              <div class="topo-node-sub">Subnet: 10.0.1.0/24</div>
+            </div>
+
+            <div class="topo-node" id="topo-vm-2" title="Click to test outage on Instance 2">
+              <span class="topo-node-badge">AZ-2</span>
+              <span class="topo-node-icon">🖥️</span>
+              <div class="topo-node-title" id="topo-vm2-title">Azure VM Tier 2</div>
+              <div class="topo-node-sub">Subnet: 10.0.2.0/24</div>
+            </div>
+          </div>
+
+          <!-- Column 4: Private Data Tier & Bastion Host -->
+          <div class="topology-column">
+            <div class="topo-node" id="topo-db" title="Click to view Database Security Isolation">
+              <span class="topo-node-badge">ISOLATED</span>
+              <span class="topo-node-icon">🛡️</span>
+              <div class="topo-node-title" id="topo-db-title">Azure SQL &amp; Bastion</div>
+              <div class="topo-node-sub">NSG Private Subnet</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="simulator-log-feed">
+          <div class="hud-badge">
+            <span class="hud-dot"></span>
+            <span class="sim-log-text" id="sim-status-log">Topology Initialized: All nodes healthy. Ready for traffic burst or fault injection.</span>
+          </div>
+          <span style="color: var(--text-dim); font-size: 0.72rem;">STATUS: REALTIME SIMULATION</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         MCA SHOWCASE 2: CLOUD RESOURCE & COST ESTIMATOR + TERRAFORM GENERATOR
+         ==================================================================== -->
+    <section class="section" id="estimator">
+      <div class="section-header">
+        <span class="eyebrow-tag">02 — INTERACTIVE ARCHITECTURE TOOL</span>
+        <h2 class="section-title">
+          Cloud Spec &amp; <span class="text-gradient">Cost Estimator</span>
+        </h2>
+        <p class="section-subtitle">
+          Configure an enterprise cloud workload and immediately benchmark Microsoft Azure vs AWS specifications, 
+          monthly operational expenditure estimates, and auto-generate Infrastructure as Code (Terraform) scripts.
+        </p>
+      </div>
+
+      <div class="estimator-grid">
+        <!-- Configuration Sliders -->
+        <div class="estimator-inputs glass-panel sci-bracket">
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <span>Workload Architecture Pattern</span>
+            </div>
+            <select class="custom-select" id="calc-workload">
+              <option value="webapp">Multi-Tier Scalable Web Application</option>
+              <option value="microservices">Containerized Microservices Cluster</option>
+              <option value="database">High-Throughput Analytics &amp; DB</option>
+            </select>
+          </div>
+
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <span>Virtual CPU Allocation</span>
+              <span class="calc-val-badge" id="lbl-vcpu">4 vCPUs</span>
+            </div>
+            <input type="range" class="custom-range" id="slider-vcpu" min="2" max="32" step="2" value="4">
+          </div>
+
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <span>Memory (RAM)</span>
+              <span class="calc-val-badge" id="lbl-ram">16 GB</span>
+            </div>
+            <input type="range" class="custom-range" id="slider-ram" min="4" max="128" step="4" value="16">
+          </div>
+
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <span>High-Performance SSD Storage</span>
+              <span class="calc-val-badge" id="lbl-storage">256 GB</span>
+            </div>
+            <input type="range" class="custom-range" id="slider-storage" min="50" max="2000" step="50" value="256">
+          </div>
+
+          <div class="calc-group">
+            <div class="calc-label-row">
+              <span>Target Region</span>
+            </div>
+            <select class="custom-select" id="calc-region">
+              <option value="india">ap-south-1 (Central India - Pune / Mumbai / Chennai)</option>
+              <option value="us">us-east-1 (N. Virginia / East US)</option>
+              <option value="eu">eu-west-1 (Ireland / West Europe)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Comparative Output & Dynamic IaC Snippet -->
+        <div class="estimator-results">
+          <div class="cost-cards-row">
+            <div class="cost-card azure">
+              <div class="cost-card-vendor">MICROSOFT AZURE ESTIMATE</div>
+              <div class="cost-card-price" id="azure-price">$124.80 <span>/month</span></div>
+              <div class="cost-card-spec" id="azure-spec">
+                VM: Standard_D4s_v5 (4 vCPU, 16GB)<br>
+                Disk: Premium SSD (LRS) · 99.95% SLA
+              </div>
+            </div>
+
+            <div class="cost-card aws">
+              <div class="cost-card-vendor">AMAZON WEB SERVICES (AWS)</div>
+              <div class="cost-card-price" id="aws-price">$119.50 <span>/month</span></div>
+              <div class="cost-card-spec" id="aws-spec">
+                Instance: m6i.xlarge (4 vCPU, 16GB)<br>
+                EBS: gp3 Provisioned IOPS · 99.99% SLA
+              </div>
+            </div>
+          </div>
+
+          <!-- Terraform IaC Generator -->
+          <div class="iac-preview-box">
+            <div class="iac-header">
+              <span>TERRAFORM INFRASTRUCTURE AS CODE (IaC)</span>
+              <button class="btn btn-outline-cyan btn-sm" id="btn-copy-iac">
+                📋 Copy Config
+              </button>
+            </div>
+            <pre class="iac-code" id="iac-code-output">
+# HashiCorp Terraform Configuration
+# Auto-generated by Zaheem Cloud Estimator
+
+resource "azurerm_linux_virtual_machine" "mca_vm" {
+  name                = "zaheem-prod-vm"
+  resource_group_name = "rg-zaheem-cloud"
+  location            = "centralindia"
+  size                = "Standard_D4s_v5"
+  admin_username      = "zaheemadmin"
+  
+  network_interface_ids = [
+    azurerm_network_interface.mca_nic.id,
+  ]
+
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Premium_LRS"
+    disk_size_gb         = 256
+  }
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         MCA SHOWCASE 3: INTERACTIVE CLOUD SHELL TERMINAL (ZAHEEM-CLI)
+         ==================================================================== -->
+    <section class="section" id="terminal-section">
+      <div class="section-header">
+        <span class="eyebrow-tag">03 — INTERACTIVE CLOUD SHELL</span>
+        <h2 class="section-title">
+          Zaheem-CLI <span class="text-gradient">Cloud Terminal</span>
+        </h2>
+        <p class="section-subtitle">
+          A fully interactive command-line interface directly connected to this portfolio engine. 
+          Inspect background systems, query academic data, simulate network pings, or trigger deployments.
+        </p>
+      </div>
+
+      <div class="terminal-window" id="terminal-window">
+        <div class="terminal-titlebar">
+          <div class="terminal-controls">
+            <span class="term-dot close" id="term-btn-close" title="Clear Shell"></span>
+            <span class="term-dot min" id="term-btn-min" title="Reset View"></span>
+            <span class="term-dot max" id="term-btn-max" title="Full Screen"></span>
+          </div>
+          <div class="terminal-title">zaheem@srm-cloud-node:~ (bash) — v2.4.0</div>
+          <div style="font-size: 0.72rem; color: var(--accent-primary);">PORT 443 [TLS 1.3]</div>
+        </div>
+
+        <div class="terminal-body" id="term-body">
+          <pre class="term-ascii">
+ ███████╗ █████╗ ██╗  ██╗███████╗███████╗███╗   ███╗
+ ╚══███╔╝██╔══██╗██║  ██║██╔════╝██╔════╝████╗ ████║
+   ███╔╝ ███████║███████║█████╗  █████╗  ██╔████╔██║
+  ███╔╝  ██╔══██║██╔══██║██╔══╝  ██╔══╝  ██║╚██╔╝██║
+ ███████╗██║  ██║██║  ██║███████╗███████╗██║ ╚═╝ ██║
+ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝     ╚═╝
+          </pre>
+          <div class="term-welcome">
+            Hypervisor CLI initialized. Type <span style="color: var(--accent-primary); font-weight: bold;">help</span> to inspect available commands.
+          </div>
+          <div id="term-history"></div>
+
+          <div class="term-input-row">
+            <span class="term-prompt">zaheem@cloud:~$</span>
+            <input type="text" class="term-input" id="term-input" autocomplete="off" spellcheck="false" autofocus aria-label="Terminal Input">
+          </div>
+        </div>
+
+        <div class="terminal-quick-cmds">
+          <span>Quick Commands:</span>
+          <span class="cmd-pill" data-cmd="help">help</span>
+          <span class="cmd-pill" data-cmd="whoami">whoami</span>
+          <span class="cmd-pill" data-cmd="skills">skills</span>
+          <span class="cmd-pill" data-cmd="projects">projects</span>
+          <span class="cmd-pill" data-cmd="ping azure.com">ping azure.com</span>
+          <span class="cmd-pill" data-cmd="deploy">deploy</span>
+          <span class="cmd-pill" data-cmd="matrix">matrix</span>
+          <span class="cmd-pill" data-cmd="clear">clear</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         TECHNICAL SKILLS & COMPETENCY MATRIX
+         ==================================================================== -->
+    <section class="section" id="skills">
+      <div class="section-header">
+        <span class="eyebrow-tag">04 — TECHNICAL PROFICIENCY</span>
+        <h2 class="section-title">
+          Engineered <span class="text-gradient">Skill Matrix</span>
+        </h2>
+        <p class="section-subtitle">
+          Comprehensive enterprise technologies, cloud platforms, virtualization tools, 
+          and networking protocols mastered through hands-on labs and architecture designs.
+        </p>
+      </div>
+
+      <div class="skills-filter-bar">
+        <div class="skills-tabs" role="tablist">
+          <button class="skill-tab-btn active" data-filter="all">All Disciplines</button>
+          <button class="skill-tab-btn" data-filter="azure">Microsoft Azure</button>
+          <button class="skill-tab-btn" data-filter="aws">Amazon Web Services</button>
+          <button class="skill-tab-btn" data-filter="networking">Networking &amp; Sec</button>
+          <button class="skill-tab-btn" data-filter="dev">DevOps &amp; Web</button>
+        </div>
+
+        <div class="skills-search-wrapper">
+          <svg class="search-icon-inside" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" class="skills-search-input" id="skills-search" placeholder="Filter skills (e.g., VPC, VNet, Docker)..." aria-label="Search skills">
+        </div>
+      </div>
+
+      <div class="skills-grid" id="skills-grid">
+        <!-- Azure Virtual Machines -->
+        <div class="skill-card" data-category="azure" data-name="Azure Virtual Machines VM Scale Sets">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble">☁️</div>
+            <div class="skill-meta">
+              <h4>Azure VMs &amp; VMSS</h4>
+              <span class="skill-category-tag">AZURE COMPUTE</span>
+            </div>
+          </div>
+          <p class="skill-desc">Linux &amp; Windows virtual machines provisioning, custom images, availability sets, and auto-scaling VM Scale Sets.</p>
+          <div class="skill-meter-wrapper">
+            <div class="skill-meter-label"><span>Mastery</span><span>90%</span></div>
+            <div class="skill-meter-track"><div class="skill-meter-fill" style="width: 90%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Azure Networking -->
+        <div class="skill-card" data-category="azure networking" data-name="Azure Networking VNet NSG Subnets Bastion">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble">🌐</div>
+            <div class="skill-meta">
+              <h4>Azure VNet &amp; NSG</h4>
+              <span class="skill-category-tag">AZURE NETWORKING</span>
+            </div>
+          </div>
+          <p class="skill-desc">VNet Peering, micro-segmentation with Network Security Groups, Route Tables (UDR), and Azure Bastion zero-trust jump hosts.</p>
+          <div class="skill-meter-wrapper">
+            <div class="skill-meter-label"><span>Mastery</span><span>92%</span></div>
+            <div class="skill-meter-track"><div class="skill-meter-fill" style="width: 92%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Azure Load Balancing -->
+        <div class="skill-card" data-category="azure networking" data-name="Azure Load Balancer Application Gateway WAF">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble">⚖️</div>
+            <div class="skill-meta">
+              <h4>App Gateway &amp; Load Balancer</h4>
+              <span class="skill-category-tag">TRAFFIC MANAGEMENT</span>
+            </div>
+          </div>
+          <p class="skill-desc">Layer 7 URL-based routing, Web Application Firewall (WAF), SSL/TLS offloading, and Layer 4 high-performance load balancing.</p>
+          <div class="skill-meter-wrapper">
+            <div class="skill-meter-label"><span>Mastery</span><span>88%</span></div>
+            <div class="skill-meter-track"><div class="skill-meter-fill" style="width: 88%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Azure Storage & Security -->
+        <div class="skill-card" data-category="azure" data-name="Azure Storage Blob Key Vault RBAC">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble">🔐</div>
+            <div class="skill-meta">
+              <h4>Storage &amp; Key Vault</h4>
+              <span class="skill-category-tag">AZURE SECURITY</span>
+            </div>
+          </div>
+          <p class="skill-desc">Blob tiers (Hot, Cool, Archive), File Shares, Azure Key Vault secret management, RBAC access policies, and Managed Identities.</p>
+          <div class="skill-meter-wrapper">
+            <div class="skill-meter-label"><span>Mastery</span><span>85%</span></div>
+            <div class="skill-meter-track"><div class="skill-meter-fill" style="width: 85%;"></div></div>
+          </div>
+        </div>
+
+        <!-- AWS EC2 & Auto Scaling -->
+        <div class="skill-card" data-category="aws" data-name="AWS EC2 Auto Scaling AMI Target Groups">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble">⚡</div>
+            <div class="skill-meta">
+              <h4>Amazon EC2 &amp; Auto Scaling</h4>
+              <span class="skill-category-tag">AWS COMPUTE</span>
+            </div>
+          </div>
+          <p class="skill-desc">Elastic Compute Cloud instances, custom AMIs, dynamic scaling policies based on CloudWatch metrics, and Target Groups.</p>
+          <div class="skill-meter-wrapper">
+            <div class="skill-meter-label"><span>Mastery</span><span>88%</span></div>
+            <div class="skill-meter-track"><div class="skill-meter-fill" style="width: 88%;"></div></div>
+          </div>
+        </div>
+
+        <!-- AWS VPC & Gateways -->
+        <div class="skill-card" data-category="aws networking" data-name="AWS VPC Subnets Route Tables NAT Gateway">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble">🗺️</div>
+            <div class="skill-meta">
+              <h4>AWS VPC &amp; Gateways</h4>
+              <span class="skill-category-tag">AWS NETWORKING</span>
+            </div>
+          </div>
+          <p class="skill-desc">Public/Private multi-AZ subnets, Internet Gateways, managed NAT Gateways, Route Tables, and strict NACL/Security Group rules.</p>
+          <div class="skill-meter-wrapper">
+            <div class="skill-meter-label"><span>Mastery</span><span>90%</span></div>
+            <div class="skill-meter-track"><div class="skill-meter-fill" style="width: 90%;"></div></div>
+          </div>
+        </div>
+
+        <!-- AWS S3, Route53, CloudFront -->
+        <div class="skill-card" data-category="aws" data-name="AWS S3 Route 53 CloudFront CDN">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble">📦</div>
+            <div class="skill-meta">
+              <h4>S3, Route 53 &amp; CloudFront</h4>
+              <span class="skill-category-tag">AWS EDGE &amp; STORAGE</span>
+            </div>
+          </div>
+          <p class="skill-desc">Bucket policies, static hosting, DNS failover routing policies via Route 53, and global low-latency content distribution via CloudFront CDN.</p>
+          <div class="skill-meter-wrapper">
+            <div class="skill-meter-label"><span>Mastery</span><span>86%</span></div>
+            <div class="skill-meter-track"><div class="skill-meter-fill" style="width: 86%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Network Fundamentals & Routing -->
+        <div class="skill-card" data-category="networking" data-name="Networking Subnetting Routing CIDR TCP IP VLAN">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble">🔌</div>
+            <div class="skill-meta">
+              <h4>Network Architecture</h4>
+              <span class="skill-category-tag">CORE NETWORKING</span>
+            </div>
+          </div>
+          <p class="skill-desc">IPv4/IPv6 CIDR subnetting, VLAN trunking, LAN/WAN topology, NAT translation, stateful firewalls, and packet flow analysis.</p>
+          <div class="skill-meter-wrapper">
+            <div class="skill-meter-label"><span>Mastery</span><span>94%</span></div>
+            <div class="skill-meter-track"><div class="skill-meter-fill" style="width: 94%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Virtualization: VMware & Docker -->
+        <div class="skill-card" data-category="networking dev" data-name="VMware ESXi Workstation Docker Containerization">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble">📦</div>
+            <div class="skill-meta">
+              <h4>VMware &amp; Docker</h4>
+              <span class="skill-category-tag">VIRTUALIZATION</span>
+            </div>
+          </div>
+          <p class="skill-desc">Bare-metal and hosted hypervisors, VM snapshots, virtual switches, and lightweight Docker containerization workflows.</p>
+          <div class="skill-meter-wrapper">
+            <div class="skill-meter-label"><span>Mastery</span><span>82%</span></div>
+            <div class="skill-meter-track"><div class="skill-meter-fill" style="width: 82%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Infrastructure as Code & Automation -->
+        <div class="skill-card" data-category="dev" data-name="Terraform ARM Templates CloudFormation Git IaC">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble">⚙️</div>
+            <div class="skill-meta">
+              <h4>Infrastructure as Code (IaC)</h4>
+              <span class="skill-category-tag">DEVOPS &amp; AUTOMATION</span>
+            </div>
+          </div>
+          <p class="skill-desc">Declarative infrastructure automation using Azure ARM templates, AWS CloudFormation, Terraform HCL, and Git version control.</p>
+          <div class="skill-meter-wrapper">
+            <div class="skill-meter-label"><span>Mastery</span><span>84%</span></div>
+            <div class="skill-meter-track"><div class="skill-meter-fill" style="width: 84%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Web Technologies -->
+        <div class="skill-card" data-category="dev" data-name="HTML5 CSS3 JavaScript ES6 Canvas API Web Audio">
+          <div class="skill-card-top">
+            <div class="skill-icon-bubble">💻</div>
+            <div class="skill-meta">
+              <h4>Modern Web Engineering</h4>
+              <span class="skill-category-tag">FRONTEND DEVELOPMENT</span>
+            </div>
+          </div>
+          <p class="skill-desc">Modern semantic HTML5, responsive CSS3 Grid &amp; Flexbox, asynchronous ES6+ JavaScript, 2D Canvas rendering, and Web Audio API.</p>
+          <div class="skill-meter-wrapper">
+            <div class="skill-meter-label"><span>Mastery</span><span>88%</span></div>
+            <div class="skill-meter-track"><div class="skill-meter-fill" style="width: 88%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         FEATURED CLOUD ENGINEERING PROJECTS
+         ==================================================================== -->
+    <section class="section" id="projects">
+      <div class="section-header">
+        <span class="eyebrow-tag">05 — PRODUCTION ARCHITECTURES</span>
+        <h2 class="section-title">
+          Featured Cloud <span class="text-gradient">Projects</span>
+        </h2>
+        <p class="section-subtitle">
+          Real-world cloud architectures engineered with a focus on enterprise resilience, 
+          strict zero-trust isolation, auto-scaling, and cost-effective automation.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <span class="project-badge-vendor azure">AZURE ARCHITECTURE</span>
+          <div class="project-icon-box">☁️</div>
+          <h3>Secure Multi-Tier Web Application Deployment</h3>
+          <p>
+            Architected an enterprise 3-tier cloud application isolated within Azure Virtual Networks. 
+            Protected backend services with zero public IP exposure, utilized Azure Bastion for secure administration, 
+            and deployed Application Gateway with SSL termination and NSG traffic isolation.
+          </p>
+          <div class="project-tech-pills">
+            <span class="tech-pill">Azure VMs</span>
+            <span class="tech-pill">VNet / NSG</span>
+            <span class="tech-pill">Azure Bastion</span>
+            <span class="tech-pill">App Gateway WAF</span>
+          </div>
+          <div class="project-card-footer">
+            <button class="btn btn-outline-cyan btn-sm project-modal-trigger" data-project="project-1">
+              Architecture Deep-Dive ↗
+            </button>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--status-success);">● Production Ready</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <span class="project-badge-vendor aws">AWS MULTI-AZ</span>
+          <div class="project-icon-box">⚡</div>
+          <h3>Highly Available Web Application on AWS</h3>
+          <p>
+            Engineered a fault-tolerant AWS infrastructure spanning multiple Availability Zones. 
+            Configured Application Load Balancer with target health checks, dynamic EC2 Auto Scaling, 
+            private subnets with NAT Gateways, and Route 53 latency-based routing.
+          </p>
+          <div class="project-tech-pills">
+            <span class="tech-pill">AWS EC2</span>
+            <span class="tech-pill">Multi-AZ VPC</span>
+            <span class="tech-pill">ALB</span>
+            <span class="tech-pill">Auto Scaling</span>
+            <span class="tech-pill">Route 53</span>
+          </div>
+          <div class="project-card-footer">
+            <button class="btn btn-outline-cyan btn-sm project-modal-trigger" data-project="project-2">
+              Architecture Deep-Dive ↗
+            </button>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--status-success);">● 99.99% Uptime</span>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <span class="project-badge-vendor hybrid">HYBRID CLOUD</span>
+          <div class="project-icon-box">🔗</div>
+          <h3>Hybrid Cloud Cross-Network Interconnect</h3>
+          <p>
+            Designed and validated secure cross-cloud networking between an Azure Virtual Network and an AWS VPC. 
+            Configured non-overlapping CIDR address spaces, custom routing tables, security group policies, 
+            and secure Bastion jump hosts with validated end-to-end packet delivery.
+          </p>
+          <div class="project-tech-pills">
+            <span class="tech-pill">Azure VNet</span>
+            <span class="tech-pill">AWS VPC</span>
+            <span class="tech-pill">Routing Tables</span>
+            <span class="tech-pill">IPsec / Peering</span>
+          </div>
+          <div class="project-card-footer">
+            <button class="btn btn-outline-cyan btn-sm project-modal-trigger" data-project="project-3">
+              Architecture Deep-Dive ↗
+            </button>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-secondary);">● Zero-Trust Net</span>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <span class="project-badge-vendor hybrid">IaC AUTOMATION</span>
+          <div class="project-icon-box">⚙️</div>
+          <h3>Automated Cloud Provisioning (IaC Pipeline)</h3>
+          <p>
+            Implemented Infrastructure as Code across Azure and AWS using ARM Templates and AWS CloudFormation. 
+            Automated the provisioning of compute instances, network security groups, subnets, and blob storage 
+            with parameterized configurations for rapid staging and production rollouts.
+          </p>
+          <div class="project-tech-pills">
+            <span class="tech-pill">CloudFormation</span>
+            <span class="tech-pill">Azure ARM</span>
+            <span class="tech-pill">JSON / YAML</span>
+            <span class="tech-pill">Git Automation</span>
+          </div>
+          <div class="project-card-footer">
+            <button class="btn btn-outline-cyan btn-sm project-modal-trigger" data-project="project-4">
+              Architecture Deep-Dive ↗
+            </button>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-primary);">● Automated CI/CD</span>
+          </div>
+        </div>
+
+        <!-- Project 5 (MCA Mini Project Platform) -->
+        <div class="project-card">
+          <span class="project-badge-vendor azure">MCA SPECIAL PROJECT</span>
+          <div class="project-icon-box">💻</div>
+          <h3>Interactive Cloud Telemetry &amp; Hypervisor Platform</h3>
+          <p>
+            Designed and engineered this modern cyber-cloud portfolio and interactive simulator. 
+            Features real-time network topology packet flow simulation, live Azure vs AWS cost calculation, 
+            an embedded interactive bash shell (zaheem-cli), and code-synthesized Web Audio API soundscapes.
+          </p>
+          <div class="project-tech-pills">
+            <span class="tech-pill">Vanilla JS (ES6+)</span>
+            <span class="tech-pill">2D Canvas Engine</span>
+            <span class="tech-pill">Web Audio API</span>
+            <span class="tech-pill">Cyber Glass UI</span>
+          </div>
+          <div class="project-card-footer">
+            <button class="btn btn-outline-cyan btn-sm project-modal-trigger" data-project="project-5">
+              Architecture Deep-Dive ↗
+            </button>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--status-success);">● Live System</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         ACADEMIC BACKGROUND & CERTIFICATIONS
+         ==================================================================== -->
+    <section class="section" id="academics">
+      <div class="section-header">
+        <span class="eyebrow-tag">06 — EDUCATION &amp; CREDENTIALS</span>
+        <h2 class="section-title">
+          Academic <span class="text-gradient">Timeline &amp; Growth</span>
+        </h2>
+        <p class="section-subtitle">
+          Foundational and postgraduate academic progression from SRM Institute of Science &amp; Technology 
+          and Yenepoya University, complemented by ongoing cloud certifications.
+        </p>
+      </div>
+
+      <div class="timeline-container">
+        <!-- MCA Milestone -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card sci-bracket">
+            <div class="timeline-date">2025 – 2027 · CURRENTLY PURSUING</div>
+            <h3>Master of Computer Applications (MCA)</h3>
+            <div class="timeline-institution">SRM Institute of Science and Technology, Chennai</div>
+            <p>
+              Focusing on advanced cloud computing architectures, enterprise networking, distributed systems, 
+              network security protocols, virtualization technologies, and software engineering methodologies.
+            </p>
+          </div>
+        </div>
+
+        <!-- BCA Milestone -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card sci-bracket">
+            <div class="timeline-date">2022 – 2025 · COMPLETED WITH DISTINCTION</div>
+            <h3>Bachelor of Computer Applications (BCA)</h3>
+            <div class="timeline-institution">Yenepoya University, Mangalore</div>
+            <p>
+              Specialized in <strong>Big Data Analytics, Cyber Security &amp; Cloud Computing</strong>. 
+              Built a comprehensive foundation in operating systems, networking fundamentals, database management, 
+              and cloud infrastructure concepts.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications Cards -->
+      <div class="certifications-grid">
+        <div class="cert-card">
+          <div class="cert-icon">📜</div>
+          <div class="cert-info">
+            <h4>Microsoft Certified AZ-104</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px;">Azure Administrator Associate</p>
+            <span class="cert-status" style="color: var(--status-warning);">● Active Preparation / Candidate</span>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon">☁️</div>
+          <div class="cert-info">
+            <h4>Microsoft Azure Infrastructure</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px;">Compute, Storage, Networking, Security</p>
+            <span class="cert-status" style="color: var(--status-success);">● Hands-On Validated</span>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon">🖥️</div>
+          <div class="cert-info">
+            <h4>VMware Virtualization</h4>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px;">Hypervisor &amp; Enterprise IT Infra</p>
+            <span class="cert-status" style="color: var(--accent-primary);">● Advanced Learning Track</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         CONTACT CYBER-TERMINAL & DISPATCHER
+         ==================================================================== -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <span class="eyebrow-tag">07 — COMMUNICATIONS DISPATCH</span>
+        <h2 class="section-title">
+          Establish <span class="text-gradient">Connection</span>
+        </h2>
+        <p class="section-subtitle">
+          Interested in discussing cloud engineering opportunities, cloud architecture reviews, 
+          or technical collaborations? Dispatch a packet below or connect directly.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Direct Contact Cards -->
+        <div class="contact-info-panel glass-panel sci-bracket">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 18px; color: var(--text-highlight);">
+            Direct Channels
+          </h3>
+
+          <div class="contact-method-card" id="copy-email-card" title="Click to copy email">
+            <span class="contact-method-icon">✉️</span>
+            <div class="contact-method-info">
+              <h5>Electronic Mail</h5>
+              <p>abduzaheem.kp@gmail.com</p>
+            </div>
+            <span class="copy-badge">Copy 📋</span>
+          </div>
+
+          <div class="contact-method-card" id="copy-phone-card" title="Click to copy phone">
+            <span class="contact-method-icon">📞</span>
+            <div class="contact-method-info">
+              <h5>Direct Voice / WhatsApp</h5>
+              <p>+91 8943905228</p>
+            </div>
+            <span class="copy-badge">Copy 📋</span>
+          </div>
+
+          <div class="contact-method-card" onclick="window.open('https://www.linkedin.com/in/zaheemkp/', '_blank')">
+            <span class="contact-method-icon">💼</span>
+            <div class="contact-method-info">
+              <h5>Professional Network</h5>
+              <p>linkedin.com/in/zaheemkp</p>
+            </div>
+            <span class="copy-badge">Visit ↗</span>
+          </div>
+
+          <div class="contact-method-card" onclick="window.open('https://github.com/Zaheem-GIT', '_blank')">
+            <span class="contact-method-icon">🐙</span>
+            <div class="contact-method-info">
+              <h5>Code Repositories</h5>
+              <p>github.com/Zaheem-GIT</p>
+            </div>
+            <span class="copy-badge">Visit ↗</span>
+          </div>
+
+          <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid var(--border-subtle); font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">
+            <span>LOCATION: Chennai, Tamil Nadu, India</span><br>
+            <span>AFFILIATION: SRM Institute of Science &amp; Technology</span>
+          </div>
+        </div>
+
+        <!-- Interactive Contact Dispatcher Form -->
+        <div class="contact-form-panel glass-panel sci-bracket">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 18px; color: var(--text-highlight);">
+            Encrypted Dispatcher
+          </h3>
+
+          <form id="contact-form">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">SENDER IDENTIFIER [NAME]</label>
+              <input type="text" class="form-input" id="contact-name" placeholder="e.g. Recruiter / Collaborator" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-email">RETURN ADDRESS [EMAIL]</label>
+              <input type="email" class="form-input" id="contact-email" placeholder="name@organization.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-subject">PACKET TOPIC [SUBJECT]</label>
+              <input type="text" class="form-input" id="contact-subject" placeholder="Project Discussion / Opportunity" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message">PAYLOAD [MESSAGE]</label>
+              <textarea class="form-textarea" id="contact-message" placeholder="Type your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="btn-submit-contact" style="width: 100%;">
+              <span>Transmit Payload 🚀</span>
+            </button>
+
+            <div class="form-status-msg" id="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       PROJECT ARCHITECTURE MODAL (DEEP DIVE POPUP)
+       ==================================================================== -->
+  <div class="modal-overlay" id="project-modal" aria-hidden="true">
+    <div class="modal-content sci-bracket" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div id="modal-body-dynamic">
+        <!-- Content inserted dynamically by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       COMMAND PALETTE MODAL (CTRL+K / CMD+K)
+       ==================================================================== -->
+  <div class="cmd-palette-modal" id="cmd-palette" aria-hidden="true">
+    <div class="cmd-palette-box" role="dialog" aria-modal="true" aria-label="Quick Command Palette">
+      <div class="cmd-palette-input-wrap">
+        <span style="color: var(--accent-primary);">⚡</span>
+        <input type="text" class="cmd-palette-input" id="cmd-palette-input" placeholder="Type a destination or command..." autocomplete="off">
+        <span class="cmd-esc-badge">ESC</span>
+      </div>
+      <div class="cmd-results-list" id="cmd-results-list">
+        <!-- Quick navigation entries populated by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING TOAST NOTIFICATION STACK -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- ====================================================================
+       FOOTER
+       ==================================================================== -->
+  <footer>
+    <div class="footer-left">
+      <strong>Abdu Rahman Zaheem K.P.</strong>
+      <span>Master of Computer Applications (MCA) Mini Project · SRM Institute of Science &amp; Technology</span>
+      <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim);">
+        Architecture: Neo-Cloud Cyberpunk System · Built with Vanilla HTML5, CSS3 &amp; Web Audio API
+      </span>
+    </div>
+
+    <ul class="footer-nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#simulator">Simulator</a></li>
+      <li><a href="#estimator">Estimator</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="./Zaheem-CV.pdf.pdf" download="Abdu-Rahman-Zaheem-CV.pdf">Download CV</a></li>
+    </ul>
+
+    <div style="font-family: var(--font-mono); font-size: 0.78rem;">
+      © <span id="year">2026</span> Zaheem. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- MAIN SCRIPT -->
+  <script src="./script.js" defer></script>
+</body>
+</html>
