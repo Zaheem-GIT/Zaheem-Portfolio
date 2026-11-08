@@ -84,6 +84,12 @@
       <li><a href="#terminal-section" class="nav-link">Cloud Shell</a></li>
       <li><a href="#academics" class="nav-link">Academics</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li class="mobile-menu-divider"></li>
+      <li class="mobile-only-action">
+        <a href="./Zaheem-CV.pdf.pdf" download="Abdu-Rahman-Zaheem-CV.pdf" class="btn btn-outline-cyan" style="width: 100%; justify-content: center;">
+          Download CV (PDF) ↓
+        </a>
+      </li>
     </ul>
 
     <div class="nav-cta-group">
@@ -300,60 +306,65 @@
         </div>
 
         <!-- Interactive Topology Stage -->
-        <div class="topology-stage" id="topo-stage">
-          <!-- Animated SVG Connection lines -->
-          <svg class="topology-svg-lines" id="topo-svg-lines">
-            <path id="line-1" class="cable-line" d="M 120 180 L 260 180" />
-            <path id="line-2a" class="cable-line" d="M 380 180 C 440 180, 440 90, 520 90" />
-            <path id="line-2b" class="cable-line" d="M 380 180 C 440 180, 440 270, 520 270" />
-            <path id="line-3a" class="cable-line" d="M 640 90 C 700 90, 700 180, 780 180" />
-            <path id="line-3b" class="cable-line" d="M 640 270 C 700 270, 700 180, 780 180" />
-          </svg>
+        <div class="topology-mobile-hint">
+          <span>⇄ Swipe horizontally to explore cloud architecture ⇄</span>
+        </div>
+        <div class="topology-stage-wrapper">
+          <div class="topology-stage" id="topo-stage">
+            <!-- Animated SVG Connection lines -->
+            <svg class="topology-svg-lines" id="topo-svg-lines">
+              <path id="line-1" class="cable-line" d="M 120 180 L 260 180" />
+              <path id="line-2a" class="cable-line" d="M 380 180 C 440 180, 440 90, 520 90" />
+              <path id="line-2b" class="cable-line" d="M 380 180 C 440 180, 440 270, 520 270" />
+              <path id="line-3a" class="cable-line" d="M 640 90 C 700 90, 700 180, 780 180" />
+              <path id="line-3b" class="cable-line" d="M 640 270 C 700 270, 700 180, 780 180" />
+            </svg>
 
-          <!-- Column 1: Client Edge -->
-          <div class="topology-column">
-            <div class="topo-node" id="topo-client" title="Click to inspect Client Edge">
-              <span class="topo-node-badge">EDGE</span>
-              <span class="topo-node-icon">🌍</span>
-              <div class="topo-node-title">Public Clients</div>
-              <div class="topo-node-sub">HTTPS / DNS</div>
-            </div>
-          </div>
-
-          <!-- Column 2: Ingress / Load Balancer -->
-          <div class="topology-column">
-            <div class="topo-node" id="topo-lb" title="Click to inspect Load Balancer rules">
-              <span class="topo-node-badge">WAF</span>
-              <span class="topo-node-icon">⚖️</span>
-              <div class="topo-node-title" id="topo-lb-title">App Gateway</div>
-              <div class="topo-node-sub" id="topo-lb-sub">SSL Offload · Port 443</div>
-            </div>
-          </div>
-
-          <!-- Column 3: Compute Scale Set / AZs -->
-          <div class="topology-column">
-            <div class="topo-node" id="topo-vm-1" title="Click to test outage on Instance 1">
-              <span class="topo-node-badge">AZ-1</span>
-              <span class="topo-node-icon">🖥️</span>
-              <div class="topo-node-title" id="topo-vm1-title">Azure VM Tier 1</div>
-              <div class="topo-node-sub">Subnet: 10.0.1.0/24</div>
+            <!-- Column 1: Client Edge -->
+            <div class="topology-column">
+              <div class="topo-node" id="topo-client" title="Click to inspect Client Edge">
+                <span class="topo-node-badge">EDGE</span>
+                <span class="topo-node-icon">🌍</span>
+                <div class="topo-node-title">Public Clients</div>
+                <div class="topo-node-sub">HTTPS / DNS</div>
+              </div>
             </div>
 
-            <div class="topo-node" id="topo-vm-2" title="Click to test outage on Instance 2">
-              <span class="topo-node-badge">AZ-2</span>
-              <span class="topo-node-icon">🖥️</span>
-              <div class="topo-node-title" id="topo-vm2-title">Azure VM Tier 2</div>
-              <div class="topo-node-sub">Subnet: 10.0.2.0/24</div>
+            <!-- Column 2: Ingress / Load Balancer -->
+            <div class="topology-column">
+              <div class="topo-node" id="topo-lb" title="Click to inspect Load Balancer rules">
+                <span class="topo-node-badge">WAF</span>
+                <span class="topo-node-icon">⚖️</span>
+                <div class="topo-node-title" id="topo-lb-title">App Gateway</div>
+                <div class="topo-node-sub" id="topo-lb-sub">SSL Offload · Port 443</div>
+              </div>
             </div>
-          </div>
 
-          <!-- Column 4: Private Data Tier & Bastion Host -->
-          <div class="topology-column">
-            <div class="topo-node" id="topo-db" title="Click to view Database Security Isolation">
-              <span class="topo-node-badge">ISOLATED</span>
-              <span class="topo-node-icon">🛡️</span>
-              <div class="topo-node-title" id="topo-db-title">Azure SQL &amp; Bastion</div>
-              <div class="topo-node-sub">NSG Private Subnet</div>
+            <!-- Column 3: Compute Scale Set / AZs -->
+            <div class="topology-column">
+              <div class="topo-node" id="topo-vm-1" title="Click to test outage on Instance 1">
+                <span class="topo-node-badge">AZ-1</span>
+                <span class="topo-node-icon">🖥️</span>
+                <div class="topo-node-title" id="topo-vm1-title">Azure VM Tier 1</div>
+                <div class="topo-node-sub">Subnet: 10.0.1.0/24</div>
+              </div>
+
+              <div class="topo-node" id="topo-vm-2" title="Click to test outage on Instance 2">
+                <span class="topo-node-badge">AZ-2</span>
+                <span class="topo-node-icon">🖥️</span>
+                <div class="topo-node-title" id="topo-vm2-title">Azure VM Tier 2</div>
+                <div class="topo-node-sub">Subnet: 10.0.2.0/24</div>
+              </div>
+            </div>
+
+            <!-- Column 4: Private Data Tier & Bastion Host -->
+            <div class="topology-column">
+              <div class="topo-node" id="topo-db" title="Click to view Database Security Isolation">
+                <span class="topo-node-badge">ISOLATED</span>
+                <span class="topo-node-icon">🛡️</span>
+                <div class="topo-node-title" id="topo-db-title">Azure SQL &amp; Bastion</div>
+                <div class="topo-node-sub">NSG Private Subnet</div>
+              </div>
             </div>
           </div>
         </div>
@@ -518,6 +529,7 @@ resource "azurerm_linux_virtual_machine" "mca_vm" {
         </div>
 
         <div class="terminal-body" id="term-body">
+          <div class="term-mobile-banner">[ ZAHEEM HYPERVISOR v2.4.0 ONLINE ]</div>
           <pre class="term-ascii">
  ███████╗ █████╗ ██╗  ██╗███████╗███████╗███╗   ███╗
  ╚══███╔╝██╔══██╗██║  ██║██╔════╝██╔════╝████╗ ████║

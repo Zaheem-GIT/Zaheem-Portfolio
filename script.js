@@ -923,6 +923,7 @@ class ProjectModalManager {
 
     this.overlay.classList.add('open');
     this.overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
   }
 
   close() {
@@ -930,6 +931,7 @@ class ProjectModalManager {
     sfx.playClick();
     this.overlay.classList.remove('open');
     this.overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   }
 }
 
@@ -1036,6 +1038,7 @@ class CommandPalette {
     sfx.playClick();
     this.modal.classList.add('open');
     this.modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
     if (this.input) {
       this.input.value = '';
       this.input.focus();
@@ -1047,6 +1050,7 @@ class CommandPalette {
     if (!this.modal) return;
     this.modal.classList.remove('open');
     this.modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   }
 
   render(filterText) {
@@ -1166,19 +1170,29 @@ function initNavigation() {
   const navbar = document.getElementById('navbar');
 
   if (menuToggle && navLinks) {
+    const closeMenu = () => {
+      navLinks.classList.remove('mobile-open');
+      menuToggle.textContent = '☰';
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
     menuToggle.addEventListener('click', () => {
       sfx.playClick();
       const open = navLinks.classList.toggle('mobile-open');
       menuToggle.textContent = open ? '✕' : '☰';
       menuToggle.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
     });
 
     navLinks.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('mobile-open');
-        menuToggle.textContent = '☰';
-        menuToggle.setAttribute('aria-expanded', 'false');
-      });
+      link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('mobile-open')) {
+        closeMenu();
+      }
     });
   }
 
